@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gowtham Nataraj | Portfolio Login</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=11">
+</head>
+<body>
+  <main class="login-page">
+    <section class="login-hero">
+      <a class="brand login-brand" href="login.html"><span class="brand-mark">GN</span><span>Gowtham Nataraj</span></a>
+      <div>
+        <p class="eyebrow">Interview portfolio access</p>
+        <h1>Sign in to present your financial analytics dashboard.</h1>
+        <p>This portfolio is prepared for Gowtham Nataraj's data analyst interviews, combining candidate profile details with a live financial analytics dashboard.</p>
+      </div>
+    </section>
+
+    <section class="login-panel">
+      <form class="login-form" id="loginForm">
+        <div>
+          <p class="eyebrow">Login</p>
+          <h2>Finance Portal</h2>
+        </div>
+
+        <label for="username">Username</label>
+        <input id="username" name="username" type="text" autocomplete="username" value="admin" required>
+
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" autocomplete="current-password" value="portfolio123" required>
+
+        <button class="btn" type="submit">Sign In</button>
+        <p class="form-status" id="loginStatus" role="status" aria-live="polite"></p>
+
+        <div class="demo-credentials">
+          <span>Demo username: <strong>admin</strong></span>
+          <span>Demo password: <strong>portfolio123</strong></span>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <script src="script.js?v=11"></script>
+</body>
+</html>

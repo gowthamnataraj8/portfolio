@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gowtham Nataraj | Projects</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=11">
+</head>
+<body>
+  <div class="admin-shell">
+    <aside class="sidebar">
+      <a class="brand" href="index.html"><span class="brand-mark">GN</span><span>Gowtham Nataraj</span></a>
+      <nav class="side-nav" aria-label="Portfolio navigation">
+        <a href="index.html" data-icon="OV">Overview</a>
+        <a href="dashboard.html" data-icon="AN">Analytics</a>
+        <a class="active" href="products.html" data-icon="CS">Case Studies</a>
+        <a href="about.html" data-icon="ME">About Me</a>
+        <a href="contact.html" data-icon="CV">Resume</a>
+      </nav>
+      <button class="logout-button" type="button" data-logout>Logout</button>
+      <div class="sidebar-card"><p>Workspace</p><strong>Data Case Studies</strong></div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar reveal-on-scroll">
+        <button class="menu-toggle" type="button" aria-label="Toggle sidebar">Menu</button>
+        <div>
+          <p class="eyebrow">Project portfolio</p>
+          <h1>Data Projects for UK Analyst Interviews</h1>
+          <p class="page-subtitle">Real case studies showing business problem framing, SEC financial data processing, Python analysis, econometric modelling, machine learning, dashboard output, insight, and recommendation.</p>
+        </div>
+        <div class="toolbar">
+          <div class="filter-group">
+            <span>Focus</span>
+            <select id="categoryFilter" aria-label="Select project focus">
+              <option value="all">All Case Studies</option>
+              <option value="Python">Python</option>
+              <option value="Power BI">Power BI</option>
+              <option value="SQL">SQL</option>
+              <option value="Excel">Excel</option>
+            </select>
+          </div>
+          <div class="filter-group export-group">
+            <span>Export</span>
+            <button class="toolbar-button" type="button" data-export="csv">CSV</button>
+            <button class="toolbar-button" type="button" data-export="excel">Excel</button>
+            <button class="toolbar-button" type="button" data-export="pdf">PDF</button>
+          </div>
+        </div>
+      </header>
+
+      <section class="content-grid reveal-on-scroll">
+        <article class="panel panel-wide featured-project">
+          <div>
+            <p class="eyebrow">Featured real project</p>
+            <h2>Impact of Cost Structure and Debt Strategy on Corporate Profitability</h2>
+            <p class="muted">A corporate profitability analysis using SEC Financial Statement datasets from 2016-2026. The project builds financial ratios, creates a panel dataset, compares fixed effects panel regression with Random Forest regression, and explains how cost structure and debt strategy relate to ROA.</p>
+          </div>
+          <a class="hero-button primary" href="https://github.com/gowthamnataraj8/Impact-of-Cost-Structure-and-Debt-Strategy-on-Corporate-Profitability" target="_blank" rel="noopener noreferrer">View GitHub Project</a>
+        </article>
+
+        <article class="panel panel-wide notebook-results">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Live notebook results</p>
+              <h2>Corporate Profitability Model Output</h2>
+            </div>
+            <span class="panel-note">From main.ipynb</span>
+          </div>
+          <div class="model-kpi-grid">
+            <div><span>Clean rows</span><strong id="corpRows">0</strong></div>
+            <div><span>Firms</span><strong id="corpEntities">0</strong></div>
+            <div><span>Best R2</span><strong id="corpBestR2">0.000</strong></div>
+            <div><span>Best RMSE</span><strong id="corpBestRmse">0.000</strong></div>
+          </div>
+          <div class="model-grid">
+            <div>
+              <h3>Model Comparison</h3>
+              <canvas id="corporateModelChart" height="250"></canvas>
+            </div>
+            <div>
+              <h3>ROA Relationship Strength</h3>
+              <canvas id="corporateCorrelationChart" height="250"></canvas>
+            </div>
+          </div>
+          <div class="model-summary-grid">
+            <div>
+              <strong>Best Random Forest Parameters</strong>
+              <p id="corpBestParams"></p>
+            </div>
+            <div>
+              <strong>Notebook Finding</strong>
+              <p>Cost structure shows a positive relationship with ROA, while debt ratio has a negative relationship. Random Forest gives stronger predictive performance; panel regression supports interpretability.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel panel-wide">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Recruiter view</p>
+              <h2>How I Structure Each Project</h2>
+            </div>
+          </div>
+          <div class="talking-points">
+            <div>
+              <strong>Problem</strong>
+              <p>Start with the business question, such as revenue performance, risk, cost control, or reporting accuracy.</p>
+            </div>
+            <div>
+              <strong>Process</strong>
+              <p>Clean data, calculate KPIs, create charts, validate findings, and turn analysis into a dashboard or report.</p>
+            </div>
+            <div>
+              <strong>Impact</strong>
+              <p>Explain the insight, recommendation, and how stakeholders could use the output for decisions.</p>
+            </div>
+          </div>
+        </article>
+        <article class="panel panel-wide">
+          <div class="panel-header"><div><p class="eyebrow">Case study impact</p><h2>Impact Score by Finance Project</h2></div></div>
+          <canvas id="caseImpactChart" height="280"></canvas>
+        </article>
+      </section>
+
+      <section class="panel project-add-panel reveal-on-scroll">
+        <div>
+          <p class="eyebrow">Add real projects</p>
+          <h2>Ready for Your Strongest Portfolio Work</h2>
+          <p class="muted">Replace the sample case studies with real projects by editing the `cases` list in `script.js`. For each project, add the business problem, dataset, tools, your role, outcome, GitHub link, and live dashboard link.</p>
+        </div>
+        <a class="hero-button primary" href="https://github.com/gowthamnataraj8" target="_blank" rel="noopener noreferrer">GitHub Profile</a>
+      </section>
+
+      <section class="project-grid reveal-on-scroll" id="projectCards"></section>
+    </main>
+  </div>
+
+  <script src="script.js?v=11"></script>
+</body>
+</html>

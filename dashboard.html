@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gowtham Nataraj | Analytics Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=11">
+</head>
+<body>
+  <div class="admin-shell">
+    <aside class="sidebar">
+      <a class="brand" href="index.html"><span class="brand-mark">GN</span><span>Gowtham Nataraj</span></a>
+      <nav class="side-nav" aria-label="Portfolio navigation">
+        <a href="index.html" data-icon="OV">Overview</a>
+        <a class="active" href="dashboard.html" data-icon="AN">Analytics</a>
+        <a href="products.html" data-icon="CS">Case Studies</a>
+        <a href="about.html" data-icon="ME">About Me</a>
+        <a href="contact.html" data-icon="CV">Resume</a>
+      </nav>
+      <button class="logout-button" type="button" data-logout>Logout</button>
+      <div class="sidebar-card"><p>Workspace</p><strong>Corporate Profitability</strong></div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar reveal-on-scroll">
+        <button class="menu-toggle" type="button" aria-label="Toggle sidebar">Menu</button>
+        <div>
+          <p class="eyebrow">Live project dashboard</p>
+          <h1>Corporate Profitability Analysis</h1>
+          <p class="page-subtitle">Interactive dashboard for the GitHub project analysing how cost structure and debt strategy affect corporate profitability using SEC Financial Statement datasets, fixed effects panel regression, and Random Forest modelling.</p>
+          <div class="hero-actions">
+            <a class="hero-button primary" href="https://github.com/gowthamnataraj8/Impact-of-Cost-Structure-and-Debt-Strategy-on-Corporate-Profitability" target="_blank" rel="noopener noreferrer">GitHub Project</a>
+            <a class="hero-button" href="https://github.com/gowthamnataraj8/Impact-of-Cost-Structure-and-Debt-Strategy-on-Corporate-Profitability/blob/main/main.ipynb" target="_blank" rel="noopener noreferrer">Open Notebook</a>
+          </div>
+        </div>
+      </header>
+
+      <section class="dashboard-switcher reveal-on-scroll" aria-label="Project dashboard shortcuts">
+        <a href="#corporate-profitability-dashboard">Corporate Profitability</a>
+        <a href="#powerbi-dashboard">Power BI</a>
+        <a href="#sql-revenue-dashboard">SQL Revenue</a>
+        <a href="#python-cost-dashboard">Python Cost Study</a>
+        <a href="#excel-reporting-dashboard">Excel Reporting</a>
+      </section>
+
+      <section class="dashboard-hero-metrics reveal-on-scroll" id="corporate-profitability-dashboard" aria-label="Corporate profitability project metrics">
+        <article><span>Clean rows</span><strong id="corpRows">0</strong><small>After cleaning and ratio filters</small></article>
+        <article><span>Companies</span><strong id="corpEntities">0</strong><small>Panel entities from SEC filings</small></article>
+        <article><span>Best R2</span><strong id="corpBestR2">0.000</strong><small>Baseline Random Forest</small></article>
+        <article><span>Best RMSE</span><strong id="corpBestRmse">0.000</strong><small>Prediction error on ROA</small></article>
+      </section>
+
+      <section class="dashboard-grid reveal-on-scroll">
+        <article class="panel dashboard-card-wide">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Model performance</p>
+              <h2>Econometric vs Machine Learning Models</h2>
+            </div>
+            <span class="panel-note">R2 comparison</span>
+          </div>
+          <canvas id="corporateModelChart" height="300"></canvas>
+        </article>
+
+        <article class="panel">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">ROA drivers</p>
+              <h2>Correlation with Profitability</h2>
+            </div>
+          </div>
+          <canvas id="corporateCorrelationChart" height="300"></canvas>
+        </article>
+
+        <article class="panel">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Best model</p>
+              <h2>Random Forest Settings</h2>
+            </div>
+          </div>
+          <p class="muted" id="corpBestParams"></p>
+          <div class="finding-list">
+            <div><strong>Baseline RF</strong><span>R2 0.319 | RMSE 0.113</span></div>
+            <div><strong>Optimised RF</strong><span>R2 0.314 | RMSE 0.114</span></div>
+            <div><strong>Panel FE</strong><span>R2 0.015 | Stronger interpretability</span></div>
+          </div>
+        </article>
+
+        <article class="panel dashboard-card-wide">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Research design</p>
+              <h2>Variables Used in the Project</h2>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>Variable</th><th>Role</th><th>Formula / Meaning</th><th>Notebook use</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>ROA</td><td>Dependent variable</td><td>NetIncomeLoss / Assets</td><td>Profitability target</td></tr>
+                <tr><td>CostStructure</td><td>Independent variable</td><td>OperatingIncomeLoss / Revenues</td><td>Operational efficiency signal</td></tr>
+                <tr><td>DebtRatio</td><td>Independent variable</td><td>Liabilities / Assets</td><td>Financing risk signal</td></tr>
+                <tr><td>Size</td><td>Control variable</td><td>log(Assets)</td><td>Firm scale control</td></tr>
+                <tr><td>Growth</td><td>Control variable</td><td>Revenue percentage change</td><td>Growth control for panel model</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <article class="panel dashboard-card-wide">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Project workflow</p>
+              <h2>From SEC Filings to Model Output</h2>
+            </div>
+          </div>
+          <div class="workflow-steps">
+            <div><span>01</span><strong>Extract</strong><p>Read SEC `num.txt` and `sub.txt` XBRL financial statement files.</p></div>
+            <div><span>02</span><strong>Engineer</strong><p>Create ROA, debt ratio, cost structure, size, asset turnover, profit margin, and growth features.</p></div>
+            <div><span>03</span><strong>Clean</strong><p>Drop invalid values and filter ratios to build a clean panel dataset of 21,087 rows.</p></div>
+            <div><span>04</span><strong>Model</strong><p>Compare fixed effects panel regression with Random Forest regression for interpretability and prediction.</p></div>
+          </div>
+        </article>
+      </section>
+
+      <section class="dashboard-grid project-dashboard-section" id="powerbi-dashboard">
+        <article class="panel dashboard-card-wide powerbi-preview-panel">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Live project dashboard</p>
+              <h2>Power BI Financial KPI Dashboard</h2>
+            </div>
+            <span class="panel-note">Screenshot ready</span>
+          </div>
+          <div class="powerbi-preview">
+            <div class="preview-top">
+              <strong>Financial Performance</strong>
+              <span>Power BI dashboard mock preview</span>
+            </div>
+            <div class="preview-kpis">
+              <div><span>Revenue</span><strong>$1.49M</strong></div>
+              <div><span>Profit</span><strong>$519K</strong></div>
+              <div><span>Margin</span><strong>34.8%</strong></div>
+              <div><span>Debt</span><strong>$65K</strong></div>
+            </div>
+            <canvas id="financeTrendChart" height="260"></canvas>
+          </div>
+        </article>
+        <article class="panel">
+          <p class="eyebrow">How to add your real Power BI</p>
+          <h2>Screenshot and PBIX Ready</h2>
+          <p class="muted">Export Power BI screenshots as PNG and place them in `assets/`. Add a `.pbix` download link or a published Power BI Service link when available.</p>
+          <div class="finding-list">
+            <div><strong>Recommended pages</strong><span>Executive Summary, Trend Analysis, Category View, Risk View</span></div>
+            <div><strong>Buttons to add</strong><span>Open Report, GitHub, Download PBIX, View Screenshot</span></div>
+          </div>
+        </article>
+      </section>
+
+      <section class="dashboard-grid project-dashboard-section" id="sql-revenue-dashboard">
+        <article class="panel dashboard-card-wide">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Live project dashboard</p>
+              <h2>SQL Revenue and Profit Analysis</h2>
+            </div>
+            <span class="panel-note">Revenue focus</span>
+          </div>
+          <div class="sql-result-table">
+            <table>
+              <thead><tr><th>Query output</th><th>Metric</th><th>Result</th></tr></thead>
+              <tbody>
+                <tr><td>SUM(revenue)</td><td>Total revenue</td><td>$1.49M</td></tr>
+                <tr><td>SUM(profit)</td><td>Total profit</td><td>$519K</td></tr>
+                <tr><td>profit / revenue</td><td>Annual margin</td><td>34.8%</td></tr>
+                <tr><td>ORDER BY profit DESC</td><td>Best month</td><td>December</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+        <article class="panel">
+          <p class="eyebrow">Business question</p>
+          <h2>Which months drive stronger profitability?</h2>
+          <p class="muted">This dashboard view supports a SQL-style revenue analysis by comparing monthly revenue, cost, and profit movement. It is useful for explaining aggregation, margin logic, variance review, and stakeholder reporting.</p>
+        </article>
+      </section>
+
+      <section class="dashboard-grid project-dashboard-section" id="python-cost-dashboard">
+        <article class="panel dashboard-card-wide">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Live project dashboard</p>
+              <h2>Python Data Cleaning and Cost Study</h2>
+            </div>
+            <span class="panel-note">Cost focus</span>
+          </div>
+          <canvas id="lossChart" height="300"></canvas>
+        </article>
+        <article class="panel">
+          <p class="eyebrow">Cleaning output</p>
+          <h2>Cost and Loss Control Signals</h2>
+          <p class="muted">This project view demonstrates how cleaned financial data can be used to flag unusual loss movement and support cost-control decisions after preparing analysis-ready tables in Python/Pandas.</p>
+        </article>
+      </section>
+
+      <section class="dashboard-grid project-dashboard-section" id="excel-reporting-dashboard">
+        <article class="panel dashboard-card-wide">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Live project dashboard</p>
+              <h2>Excel Monthly Reporting Pack</h2>
+            </div>
+            <span class="panel-note">Report pack</span>
+          </div>
+          <canvas id="debtChart" height="300"></canvas>
+        </article>
+        <article class="panel dashboard-card-wide">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">KPI table</p>
+              <h2>Monthly Finance Detail</h2>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>Month</th><th>Revenue</th><th>Cost</th><th>Profit</th><th>Loss</th><th>Debt</th><th>Margin</th></tr>
+              </thead>
+              <tbody id="financialDetailTable"></tbody>
+            </table>
+          </div>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js?v=11"></script>
+</body>
+</html>
