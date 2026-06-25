@@ -32,9 +32,13 @@ contact.html
 login.html
 style.css
 script.js
-server.js
 README.md
 data/
+assets/
+projects/
+Google_certificate.png
+gowtham-nataraj-profile.jpeg
+gowtham-nataraj-resume.pdf
 ```
 
 4. In GitHub, open the repository settings.

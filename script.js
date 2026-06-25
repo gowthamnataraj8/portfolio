@@ -1,5 +1,7 @@
+// WARNING: Client-side auth is for demo/portfolio purposes only.
+// Credentials here are visible in source; never use this pattern for real apps.
 const ADMIN_USERNAME = "admin";
-const ADMIN_PASSWORD = "portfolio123";
+const ADMIN_PASSWORD = "splitex123";
 const AUTH_KEY = "portfolioDashboardAuthenticated";
 
 const currentPage = window.location.pathname.split("/").pop() || "index.html";
@@ -9,6 +11,57 @@ const requireAuth = new URLSearchParams(window.location.search).get("locked") ==
 if (!isLoginPage && requireAuth && localStorage.getItem(AUTH_KEY) !== "true") {
   window.location.href = "login.html";
 }
+
+const portfolioData = {
+  timeline: [
+    { label: "Extract", projects: 1, insights: 3 },
+    { label: "Clean", projects: 1, insights: 7 },
+    { label: "Engineer", projects: 1, insights: 11 },
+    { label: "Model", projects: 1, insights: 15 },
+    { label: "SQL", projects: 2, insights: 22 },
+    { label: "Report", projects: 2, insights: 29 }
+  ],
+  projects: [
+    {
+      name: "Impact of Cost Structure and Debt Strategy on Corporate Profitability",
+      focus: "Machine Learning",
+      problem: "Analyse how cost structure and debt strategy affect corporate profitability using SEC financial statement filings.",
+      tools: ["Python", "Pandas", "NumPy", "Statsmodels", "Scikit-learn"],
+      impact: 94,
+      status: "Ready",
+      link: "https://github.com/gowthamnataraj8/Impact-of-Cost-Structure-and-Debt-Strategy-on-Corporate-Profitability",
+      folder: "projects/corporate-profitability/README.md",
+      evidence: "Jupyter notebook, engineered financial ratios, panel regression, Random Forest metrics",
+      result: "Random Forest reached R2 0.319 and RMSE 0.113; cost structure showed a positive relationship with ROA while debt ratio was negative.",
+      summary: "Cleaned SEC XBRL financial data, engineered ROA, debt ratio, and cost structure features, then compared fixed effects panel regression with Random Forest regression."
+    },
+    {
+      name: "Banking and Financial Risk Analysis using SQL",
+      focus: "SQL",
+      problem: "Analyze banking transactions, fraud activity, and personal loan behavior to understand customer financial patterns and risk signals.",
+      tools: ["SQL", "PostgreSQL", "pgAdmin"],
+      impact: 88,
+      status: "Ready",
+      link: "https://github.com/gowthamnataraj8/Banking-sql-analysis",
+      folder: "projects/banking-sql-analysis/README.md",
+      evidence: "PostgreSQL queries, transaction analysis, fraud comparison, loan acceptance patterns",
+      result: "Identified high-value transaction categories, merchant concentration, fraud risk signals, and customer factors influencing loan acceptance.",
+      summary: "Used SQL to analyze transaction value, fraud vs non-fraud behavior, category and merchant patterns, customer spending, and personal loan acceptance drivers."
+    }
+  ]
+};
+
+const chartColors = {
+  primary: "#10b981",
+  secondary: "#f59e0b",
+  profit: "#10b981",
+  loss: "#dc2626",
+  revenue: "#2563eb",
+  debt: "#7c3aed",
+  text: "#64748b",
+  grid: "#e2e8f0",
+  track: "#f1f5f9"
+};
 
 const financeData = {
   monthly: [
@@ -24,112 +77,8 @@ const financeData = {
     { label: "Oct", revenue: 149000, cost: 90000, profit: 59000, loss: 1600, debt: 77000 },
     { label: "Nov", revenue: 158000, cost: 94000, profit: 64000, loss: 1300, debt: 71000 },
     { label: "Dec", revenue: 172000, cost: 101000, profit: 71000, loss: 1100, debt: 65000 }
-  ],
-  cases: [
-    {
-      name: "Corporate Profitability Analysis",
-      focus: "Python",
-      type: "python",
-      problem: "Analyse how cost structure and debt strategy affect corporate profitability using SEC financial filing data.",
-      tools: ["Python", "Pandas", "Statsmodels", "Scikit-learn", "Jupyter"],
-      impact: 94,
-      status: "Ready",
-      dashboardUrl: "dashboard.html#corporate-profitability-dashboard",
-      dataset: "SEC Financial Statement Data Sets, num.txt and sub.txt, 2016-2026",
-      role: "Data extraction, ratio engineering, panel dataset creation, econometric modelling, and machine learning comparison",
-      outcome: "Found that cost structure positively affects profitability while high debt ratios can weaken firm performance. Random Forest improved prediction, while panel regression gave stronger interpretability.",
-      links: [
-        { label: "GitHub", url: "https://github.com/gowthamnataraj8/Impact-of-Cost-Structure-and-Debt-Strategy-on-Corporate-Profitability" },
-        { label: "Notebook", url: "https://github.com/gowthamnataraj8/Impact-of-Cost-Structure-and-Debt-Strategy-on-Corporate-Profitability/blob/main/main.ipynb" }
-      ],
-      summary: "Built a corporate profitability study using SEC XBRL financial filings, financial ratios, fixed effects panel regression, and Random Forest regression to compare interpretability and predictive performance."
-    },
-    {
-      name: "Power BI Financial KPI Dashboard",
-      focus: "Power BI",
-      type: "powerbi",
-      problem: "Build an executive dashboard that tracks revenue, cost, profit, margin, loss, and debt risk for business decision-making.",
-      tools: ["Power BI", "DAX", "Excel", "Data Modelling"],
-      impact: 91,
-      status: "Ready",
-      dashboardUrl: "dashboard.html#powerbi-dashboard",
-      dataset: "Monthly financial KPI dataset",
-      role: "Dashboard design, KPI definition, data modelling, DAX measures, and stakeholder reporting layout",
-      outcome: "Created an interview-ready Power BI-style reporting view for profitability, operating performance, and risk monitoring.",
-      links: [
-        { label: "Live View", url: "dashboard.html#powerbi-dashboard" },
-        { label: "Add PBIX", url: "REAL_PROJECT_TEMPLATE.md" }
-      ],
-      summary: "Designed a Power BI-style financial dashboard concept with KPI cards, monthly trends, margin views, debt risk indicators, and screenshot-ready report sections."
-    },
-    {
-      name: "SQL Revenue and Profit Analysis",
-      focus: "SQL",
-      type: "sql",
-      problem: "Use SQL logic to identify which months drive the strongest revenue growth and profit margin.",
-      tools: ["SQL", "PostgreSQL", "CTEs", "Window Functions"],
-      impact: 86,
-      status: "Ready",
-      dashboardUrl: "dashboard.html#sql-revenue-dashboard",
-      dataset: "Revenue, cost, profit, and margin tables",
-      role: "SQL querying, joins, aggregation, CTE design, margin calculation, and variance analysis",
-      outcome: "Produced monthly performance logic that highlights strong periods, margin changes, and reporting-ready business insight.",
-      links: [
-        { label: "SQL Dashboard", url: "dashboard.html#sql-revenue-dashboard" },
-        { label: "Add SQL Files", url: "REAL_PROJECT_TEMPLATE.md" }
-      ],
-      summary: "Built a SQL-focused analysis structure for revenue, cost, gross profit, net profit, and best-performing periods using clear query logic."
-    },
-    {
-      name: "Python Data Cleaning Study",
-      focus: "Python",
-      type: "python",
-      problem: "Find months where cost-to-revenue ratio and operational loss are unusually high.",
-      tools: ["Python", "Pandas", "Matplotlib"],
-      impact: 82,
-      status: "Ready",
-      dashboardUrl: "dashboard.html#python-cost-dashboard",
-      dataset: "Messy financial CSV sample",
-      role: "Data cleaning, feature creation, ratio calculation, and visual checks",
-      outcome: "Flagged high-cost periods and prepared cleaned analysis tables for reporting.",
-      links: [
-        { label: "Analysis View", url: "dashboard.html" }
-      ],
-      summary: "Used Python and Pandas to clean sample financial data, calculate cost ratios, and identify possible areas for cost optimisation."
-    },
-    {
-      name: "Excel Monthly Reporting Pack",
-      focus: "Excel",
-      type: "excel",
-      problem: "Prepare a monthly management reporting pack that summarises revenue, cost, profit, loss, margin, and debt movement.",
-      tools: ["Excel", "Pivot Tables", "Lookups", "Charts"],
-      impact: 83,
-      status: "Ready",
-      dashboardUrl: "dashboard.html#excel-reporting-dashboard",
-      dataset: "Monthly finance reporting dataset",
-      role: "Pivot table design, formulas, KPI summaries, chart creation, and report formatting",
-      outcome: "Prepared a reporting-pack structure that can be exported and discussed in analyst interviews.",
-      links: [
-        { label: "Report View", url: "dashboard.html#excel-reporting-dashboard" },
-        { label: "Source Data", url: "data/splitex-analytics.json" }
-      ],
-      summary: "Created a structured Excel reporting pack concept with KPI summaries, monthly detail, pivot-style logic, and export-ready finance tables."
-    }
   ]
 };
-
-const chartColors = {
-  revenue: "#0f8b5f",
-  cost: "#d79b2b",
-  profit: "#2563eb",
-  loss: "#b42318",
-  debt: "#6d28d9",
-  text: "#66756c",
-  grid: "#dbe3dd",
-  track: "#edf3ef"
-};
-
-let activeCategory = "all";
 
 const corporateProjectResults = {
   cleanRows: 21087,
@@ -148,6 +97,8 @@ const corporateProjectResults = {
   bestParams: "max_depth=10, max_features=sqrt, min_samples_leaf=2, min_samples_split=5, n_estimators=200"
 };
 
+let activeCategory = "all";
+
 document.querySelectorAll(".menu-toggle").forEach((button) => {
   button.addEventListener("click", () => {
     document.querySelector(".sidebar")?.classList.toggle("open");
@@ -156,8 +107,8 @@ document.querySelectorAll(".menu-toggle").forEach((button) => {
 
 document.querySelector("#loginForm")?.addEventListener("submit", (event) => {
   event.preventDefault();
-  const username = document.querySelector("#username").value.trim();
-  const password = document.querySelector("#password").value;
+  const username = document.querySelector("#username")?.value.trim();
+  const password = document.querySelector("#password")?.value;
   const status = document.querySelector("#loginStatus");
 
   if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
@@ -166,7 +117,7 @@ document.querySelector("#loginForm")?.addEventListener("submit", (event) => {
     return;
   }
 
-  status.textContent = "Invalid username or password.";
+  if (status) status.textContent = "Invalid username or password.";
 });
 
 document.querySelectorAll("[data-logout]").forEach((button) => {
@@ -180,25 +131,49 @@ if (isLoginPage && localStorage.getItem(AUTH_KEY) === "true") {
   window.location.href = "index.html";
 }
 
-function initMotion() {
-  const sections = document.querySelectorAll(".reveal-on-scroll");
-  if (!sections.length) return;
+document.querySelector("#settingsForm")?.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const statusEl = document.querySelector(".form-status");
+  if (statusEl) statusEl.textContent = "Message received; Gowtham will reply within 24 hours.";
+});
 
-  const reducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
-  if (reducedMotion || !("IntersectionObserver" in window)) {
-    sections.forEach((section) => section.classList.add("is-visible"));
-    return;
+function bindControls() {
+  // IDs are unique per spec; querySelector is correct here.
+  const filter = document.querySelector("#categoryFilter");
+  if (filter) {
+    filter.addEventListener("change", () => {
+      activeCategory = filter.value;
+      renderPage();
+    });
   }
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      entry.target.classList.add("is-visible");
-      observer.unobserve(entry.target);
-    });
-  }, { threshold: 0.12 });
+  document.querySelectorAll("[data-export]").forEach((button) => {
+    button.addEventListener("click", () => exportReport(button.dataset.export));
+  });
+}
 
-  sections.forEach((section) => observer.observe(section));
+function getFilteredProjects() {
+  if (activeCategory === "all") return portfolioData.projects;
+  return portfolioData.projects.filter((project) => project.focus === activeCategory);
+}
+
+function renderKpis(projects) {
+  const tools = new Set(projects.flatMap((project) => project.tools));
+  const avgImpact = projects.length
+    ? Math.round(projects.reduce((sum, project) => sum + project.impact, 0) / projects.length)
+    : 0;
+  const readyCount = projects.filter((project) => project.status === "Ready").length;
+  const readiness = projects.length ? Math.round((readyCount / projects.length) * 100) : 0;
+
+  setText("projectCountKpi", projects.length);
+  setText("toolsKpi", tools.size);
+  setText("impactKpi", `${avgImpact}%`);
+  setText("readinessKpi", `${readiness}%`);
+}
+
+function setText(id, value) {
+  const node = document.getElementById(id);
+  if (node) node.textContent = value;
 }
 
 function animateNumber(id, value, options = {}) {
@@ -207,77 +182,22 @@ function animateNumber(id, value, options = {}) {
   const duration = options.duration || 900;
   const decimals = options.decimals || 0;
   const start = performance.now();
-
   function tick(now) {
     const progress = Math.min(1, (now - start) / duration);
     const eased = 1 - Math.pow(1 - progress, 3);
     const current = value * eased;
-    node.textContent = decimals
-      ? current.toFixed(decimals)
-      : Math.round(current).toLocaleString("en-US");
+    node.textContent = decimals ? current.toFixed(decimals) : Math.round(current).toLocaleString("en-US");
     if (progress < 1) requestAnimationFrame(tick);
   }
-
   requestAnimationFrame(tick);
 }
 
-document.querySelector("#settingsForm")?.addEventListener("submit", (event) => {
-  event.preventDefault();
-  document.querySelector(".form-status").textContent = "Profile note saved for Gowtham Nataraj's data analyst portfolio.";
-});
-
-function bindControls() {
-  document.querySelectorAll("#categoryFilter").forEach((filter) => {
-    filter.addEventListener("change", () => {
-      activeCategory = filter.value;
-      renderPage();
-    });
-  });
-
-  document.querySelectorAll("[data-export]").forEach((button) => {
-    button.addEventListener("click", () => exportReport(button.dataset.export));
-  });
-}
-
-function getFilteredCases() {
-  if (activeCategory === "all") return financeData.cases;
-  return financeData.cases.filter((item) => item.focus === activeCategory);
-}
-
-function totals() {
-  return financeData.monthly.reduce((sum, row) => ({
-    revenue: sum.revenue + row.revenue,
-    cost: sum.cost + row.cost,
-    profit: sum.profit + row.profit,
-    loss: sum.loss + row.loss,
-    debt: row.debt
-  }), { revenue: 0, cost: 0, profit: 0, loss: 0, debt: 0 });
-}
-
-function renderKpis() {
-  const total = totals();
-  const margin = total.revenue ? (total.profit / total.revenue) * 100 : 0;
-  const debtRatio = total.revenue ? (total.debt / total.revenue) * 100 : 0;
-
-  setText("revenueKpi", money(total.revenue));
-  setText("costKpi", money(total.cost));
-  setText("profitKpi", money(total.profit));
-  setText("debtKpi", money(total.debt));
-  setText("marginNote", `${margin.toFixed(1)}% profit margin`);
-  setText("debtNote", `${debtRatio.toFixed(1)}% debt-to-revenue`);
-}
-
-function setText(id, value) {
-  const node = document.getElementById(id);
-  if (node) node.textContent = value;
-}
-
-function money(value) {
-  return new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-    maximumFractionDigits: 0
-  }).format(value);
+function escapeHtml(str) {
+  return String(str)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
 }
 
 function setupCanvas(canvas) {
@@ -333,8 +253,10 @@ function drawLineChart(id, labels, series) {
     ctx.stroke();
   });
 
+  // Distribute legend items evenly across available width
+  const legendSlot = series.length > 1 ? (width - 60) / series.length : width;
   series.forEach((item, index) => {
-    const x = 42 + index * 108;
+    const x = 42 + index * legendSlot;
     ctx.fillStyle = item.color;
     ctx.fillRect(x, 8, 18, 4);
     ctx.fillStyle = chartColors.text;
@@ -349,7 +271,7 @@ function drawLineChart(id, labels, series) {
   });
 }
 
-function drawBarChart(id, labels, values, color = chartColors.revenue) {
+function drawBarChart(id, labels, values, color = chartColors.primary) {
   const setup = clearCanvas(id);
   if (!setup) return;
   const { ctx, width, height } = setup;
@@ -386,9 +308,173 @@ function drawHorizontalChart(id, labels, values) {
     ctx.fillText(labels[index], 6, y + 17);
     ctx.fillStyle = chartColors.track;
     ctx.fillRect(116, y, width - 130, 24);
-    ctx.fillStyle = chartColors.revenue;
+    ctx.fillStyle = chartColors.primary;
     ctx.fillRect(116, y, barWidth, 24);
   });
+}
+
+function renderCharts(projects) {
+  drawLineChart("portfolioTrendChart", portfolioData.timeline.map((row) => row.label), [
+    { name: "Projects", color: chartColors.primary, values: portfolioData.timeline.map((row) => row.projects) },
+    { name: "Insights", color: chartColors.secondary, values: portfolioData.timeline.map((row) => row.insights) }
+  ]);
+
+  const skillCounts = {};
+  projects.flatMap((project) => project.tools).forEach((tool) => {
+    skillCounts[tool] = (skillCounts[tool] || 0) + 1;
+  });
+  drawHorizontalChart("skillsChart", Object.keys(skillCounts), Object.values(skillCounts));
+  drawBarChart("impactChart", projects.map((project) => shortName(project.name)), projects.map((project) => project.impact), chartColors.secondary);
+}
+
+function renderTables(projects) {
+  const featuredTable = document.querySelector("#featuredProjectsTable");
+  if (featuredTable) {
+    featuredTable.innerHTML = projects.map((project) => `
+      <tr>
+        <td>${escapeHtml(project.name)}</td>
+        <td>${escapeHtml(project.focus)}</td>
+        <td>${escapeHtml(project.tools.join(", "))}</td>
+        <td>${escapeHtml(project.impact)}%</td>
+      </tr>
+    `).join("");
+  }
+
+  const detailTable = document.querySelector("#projectDetailTable");
+  if (detailTable) {
+    detailTable.innerHTML = projects.map((project) => `
+      <tr>
+        <td>${escapeHtml(project.name)}</td>
+        <td>${escapeHtml(project.focus)}</td>
+        <td>${escapeHtml(project.problem)}</td>
+        <td>${escapeHtml(project.tools.join(", "))}</td>
+        <td>${escapeHtml(project.impact)}%</td>
+        <td><span class="status ${project.status === "Ready" ? "good" : "warn"}">${escapeHtml(project.status)}</span></td>
+      </tr>
+    `).join("");
+  }
+}
+
+function renderProjectCards(projects) {
+  const container = document.querySelector("#projectCards");
+  if (!container) return;
+  container.innerHTML = projects.map((project) => `
+    <article class="project-card pro-case-card ${project.focus === "SQL" ? "sql-case" : "ml-case"}">
+      <div class="case-visual" aria-hidden="true">
+        <span>${escapeHtml(project.focus)}</span>
+        <div>
+          <i style="height: 46%"></i>
+          <i style="height: 76%"></i>
+          <i style="height: 58%"></i>
+          <i style="height: 88%"></i>
+          <i style="height: 64%"></i>
+        </div>
+      </div>
+      <div>
+        <p class="eyebrow">${escapeHtml(project.focus)}</p>
+        <h2>${escapeHtml(project.name)}</h2>
+        <p>${escapeHtml(project.summary)}</p>
+      </div>
+      <dl class="project-card-evidence">
+        <div><dt>Problem</dt><dd>${escapeHtml(project.problem)}</dd></div>
+        <div><dt>Evidence</dt><dd>${escapeHtml(project.evidence || "Project files and analysis outputs")}</dd></div>
+        <div><dt>Result</dt><dd>${escapeHtml(project.result || "Insight-ready analytical output")}</dd></div>
+      </dl>
+      <div class="project-meta">
+        ${project.tools.map((tool) => `<span>${escapeHtml(tool)}</span>`).join("")}
+      </div>
+      <div class="project-footer">
+        <strong>${escapeHtml(project.impact)}% impact</strong>
+        <span class="status ${project.status === "Ready" ? "good" : "warn"}">${escapeHtml(project.status)}</span>
+      </div>
+      ${(project.link || project.folder) ? `<div class="project-links">
+        ${project.link ? `<a class="open-project" href="${escapeHtml(project.link)}" target="_blank" rel="noopener noreferrer">Open GitHub</a>` : ""}
+        ${project.folder ? `<a href="${escapeHtml(project.folder)}">Folder Guide</a>` : ""}
+      </div>` : ""}
+    </article>
+  `).join("");
+}
+
+function exportReport(type) {
+  const report = {
+    title: "Personal Project Portfolio Report",
+    headers: ["Project", "Focus", "Problem", "Tools", "Impact", "Status"],
+    rows: getFilteredProjects().map((project) => [
+      project.name,
+      project.focus,
+      project.problem,
+      project.tools.join(", "),
+      `${project.impact}%`,
+      project.status
+    ])
+  };
+
+  if (type === "csv") downloadFile("portfolio-project-report.csv", toCsv(report), "text/csv;charset=utf-8;");
+  if (type === "excel") downloadFile("portfolio-project-report.xls", toExcelHtml(report), "application/vnd.ms-excel");
+  if (type === "pdf") printPdfSummary(report);
+}
+
+function toCsv(report) {
+  return [report.headers, ...report.rows]
+    .map((row) => row.map((cell) => `"${String(cell).replaceAll('"', '""')}"`).join(","))
+    .join("\n");
+}
+
+function toExcelHtml(report) {
+  return `
+    <html><head><meta charset="UTF-8"></head><body>
+      <h1>${escapeHtml(report.title)}</h1>
+      <table border="1">
+        <thead><tr>${report.headers.map((header) => `<th>${escapeHtml(header)}</th>`).join("")}</tr></thead>
+        <tbody>${report.rows.map((row) => `<tr>${row.map((cell) => `<td>${escapeHtml(cell)}</td>`).join("")}</tr>`).join("")}</tbody>
+      </table>
+    </body></html>
+  `;
+}
+
+function downloadFile(filename, content, type) {
+  const blob = new Blob([content], { type });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = filename;
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+  URL.revokeObjectURL(url);
+}
+
+function printPdfSummary(report) {
+  const printWindow = window.open("", "_blank");
+  if (!printWindow) {
+    alert("Pop-up blocked. Please allow pop-ups for this site to export as PDF.");
+    return;
+  }
+  printWindow.document.write(`
+    <html>
+      <head>
+        <title>${escapeHtml(report.title)}</title>
+        <style>
+          body { font-family: Arial, sans-serif; padding: 28px; color: #17211c; }
+          h1 { text-transform: uppercase; font-size: 24px; }
+          table { width: 100%; border-collapse: collapse; margin-top: 18px; }
+          th, td { border: 1px solid #dbe3dd; padding: 10px; text-align: left; }
+          th { background: #f2f5f2; }
+        </style>
+      </head>
+      <body>
+        <h1>${escapeHtml(report.title)}</h1>
+        <p>Generated from the personal portfolio dashboard.</p>
+        <table>
+          <thead><tr>${report.headers.map((header) => `<th>${escapeHtml(header)}</th>`).join("")}</tr></thead>
+          <tbody>${report.rows.map((row) => `<tr>${row.map((cell) => `<td>${escapeHtml(cell)}</td>`).join("")}</tr>`).join("")}</tbody>
+        </table>
+      </body>
+    </html>
+  `);
+  printWindow.document.close();
+  printWindow.focus();
+  printWindow.print();
 }
 
 function drawComparisonChart(id, rows, valueKey, options = {}) {
@@ -409,13 +495,51 @@ function drawComparisonChart(id, rows, valueKey, options = {}) {
     const x = 42 + slot * index + (slot - barWidth) / 2;
     const barHeight = (height - 96) * (value / max);
     const y = baseY - barHeight;
-    ctx.fillStyle = raw < 0 ? chartColors.loss : (options.color || chartColors.profit);
+    ctx.fillStyle = raw < 0 ? chartColors.loss : (options.color || chartColors.primary);
     ctx.fillRect(x, y, barWidth, barHeight);
     ctx.fillStyle = chartColors.text;
-    ctx.font = "800 11px Inter, Arial";
+    ctx.font = "700 11px Inter, Arial";
     ctx.fillText(row.label, x - 4, height - 18);
     ctx.fillText(raw.toFixed(3), x, y - 8);
   });
+}
+
+function money(value) {
+  return new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 }).format(value);
+}
+
+function renderDashboard() {
+  if (!document.getElementById("financeTrendChart") && !document.getElementById("lossChart")) return;
+  const labels = financeData.monthly.map((r) => r.label);
+
+  drawLineChart("financeTrendChart", labels, [
+    { name: "Revenue", color: chartColors.revenue, values: financeData.monthly.map((r) => r.revenue) },
+    { name: "Cost",    color: chartColors.secondary, values: financeData.monthly.map((r) => r.cost) },
+    { name: "Profit",  color: chartColors.primary,  values: financeData.monthly.map((r) => r.profit) }
+  ]);
+
+  drawLineChart("debtChart", labels, [
+    { name: "Debt", color: "#7c3aed", values: financeData.monthly.map((r) => r.debt) },
+    { name: "Loss", color: chartColors.loss, values: financeData.monthly.map((r) => r.loss) }
+  ]);
+
+  drawBarChart("lossChart", labels, financeData.monthly.map((r) => r.loss), chartColors.loss);
+
+  const detailTable = document.querySelector("#financialDetailTable");
+  if (detailTable) {
+    detailTable.innerHTML = financeData.monthly.map((row) => {
+      const margin = row.revenue ? (row.profit / row.revenue) * 100 : 0;
+      return `<tr>
+        <td>${escapeHtml(row.label)}</td>
+        <td>${escapeHtml(money(row.revenue))}</td>
+        <td>${escapeHtml(money(row.cost))}</td>
+        <td>${escapeHtml(money(row.profit))}</td>
+        <td>${escapeHtml(money(row.loss))}</td>
+        <td>${escapeHtml(money(row.debt))}</td>
+        <td>${margin.toFixed(1)}%</td>
+      </tr>`;
+    }).join("");
+  }
 }
 
 function renderCorporateProjectResults() {
@@ -426,195 +550,79 @@ function renderCorporateProjectResults() {
   animateNumber("corpBestR2", rf.r2, { decimals: 3 });
   animateNumber("corpBestRmse", rf.rmse, { decimals: 3 });
   setText("corpBestParams", corporateProjectResults.bestParams);
-  drawComparisonChart("corporateModelChart", corporateProjectResults.models, "r2", { color: chartColors.profit });
-  drawComparisonChart("corporateCorrelationChart", corporateProjectResults.correlations, "value", { color: chartColors.revenue });
-}
-
-function renderCharts() {
-  const labels = financeData.monthly.map((row) => row.label);
-  drawLineChart("financeTrendChart", labels, [
-    { name: "Revenue", color: chartColors.revenue, values: financeData.monthly.map((row) => row.revenue) },
-    { name: "Cost", color: chartColors.cost, values: financeData.monthly.map((row) => row.cost) },
-    { name: "Profit", color: chartColors.profit, values: financeData.monthly.map((row) => row.profit) }
-  ]);
-  drawLineChart("debtChart", labels, [
-    { name: "Debt", color: chartColors.debt, values: financeData.monthly.map((row) => row.debt) },
-    { name: "Loss", color: chartColors.loss, values: financeData.monthly.map((row) => row.loss) }
-  ]);
-  drawBarChart("lossChart", labels, financeData.monthly.map((row) => row.loss), chartColors.loss);
-  drawHorizontalChart("caseImpactChart", getFilteredCases().map((item) => shortName(item.name)), getFilteredCases().map((item) => item.impact));
-}
-
-function renderTables() {
-  const caseTable = document.querySelector("#featuredProjectsTable");
-  if (caseTable) {
-    caseTable.innerHTML = getFilteredCases().map((item) => `
-      <tr>
-        <td>${item.name}</td>
-        <td>${item.focus}</td>
-        <td>${item.tools.join(", ")}</td>
-        <td>${item.impact}%</td>
-      </tr>
-    `).join("");
-  }
-
-  const detailTable = document.querySelector("#financialDetailTable");
-  if (detailTable) {
-    detailTable.innerHTML = financeData.monthly.map((row) => {
-      const margin = row.revenue ? (row.profit / row.revenue) * 100 : 0;
-      return `
-        <tr>
-          <td>${row.label}</td>
-          <td>${money(row.revenue)}</td>
-          <td>${money(row.cost)}</td>
-          <td>${money(row.profit)}</td>
-          <td>${money(row.loss)}</td>
-          <td>${money(row.debt)}</td>
-          <td>${margin.toFixed(1)}%</td>
-        </tr>
-      `;
-    }).join("");
-  }
-}
-
-function renderCaseCards() {
-  const container = document.querySelector("#projectCards");
-  if (!container) return;
-  container.innerHTML = getFilteredCases().map((item) => `
-    <article class="project-card project-card-${item.type || "data"}">
-      <div class="project-visual" aria-hidden="true">
-        <span>${item.focus}</span>
-        <strong>${projectVisualLabel(item.type)}</strong>
-      </div>
-      <div>
-        <p class="eyebrow">${item.focus}</p>
-        <h2><a href="${primaryProjectLink(item)}">${item.name}</a></h2>
-        <p class="project-problem"><strong>Problem:</strong> ${item.problem}</p>
-        <p>${item.summary}</p>
-      </div>
-      <dl class="project-details">
-        <div><dt>Dataset</dt><dd>${item.dataset || "Project dataset"}</dd></div>
-        <div><dt>My role</dt><dd>${item.role || "Analysis and dashboard development"}</dd></div>
-        <div><dt>Outcome</dt><dd>${item.outcome || "Insight-ready reporting output"}</dd></div>
-      </dl>
-      <div class="project-meta">
-        ${item.tools.map((tool) => `<span>${tool}</span>`).join("")}
-      </div>
-      <div class="project-footer">
-        <strong>${item.impact}% impact</strong>
-        <span class="status ${item.status === "Ready" ? "good" : "warn"}">${item.status}</span>
-      </div>
-      <div class="project-links">
-        <a class="open-project" href="${primaryProjectLink(item)}">Open Project</a>
-        ${(item.links || []).map((link) => `<a href="${link.url}">${link.label}</a>`).join("")}
-      </div>
-    </article>
-  `).join("");
-}
-
-function primaryProjectLink(item) {
-  return item.dashboardUrl || item.links?.[0]?.url || "products.html";
-}
-
-function projectVisualLabel(type) {
-  const labels = {
-    powerbi: "Dashboard preview",
-    sql: "Query output",
-    python: "Notebook results",
-    excel: "Report pack"
-  };
-  return labels[type] || "Project preview";
-}
-
-function exportReport(type) {
-  const report = {
-    title: "Gowtham Nataraj Data Analyst Portfolio Report",
-    headers: ["Month", "Revenue", "Cost", "Profit", "Loss", "Debt", "Profit Margin"],
-    rows: financeData.monthly.map((row) => {
-      const margin = row.revenue ? (row.profit / row.revenue) * 100 : 0;
-      return [row.label, money(row.revenue), money(row.cost), money(row.profit), money(row.loss), money(row.debt), `${margin.toFixed(1)}%`];
-    })
-  };
-
-  if (type === "csv") downloadFile("financial-analytics-report.csv", toCsv(report), "text/csv;charset=utf-8;");
-  if (type === "excel") downloadFile("financial-analytics-report.xls", toExcelHtml(report), "application/vnd.ms-excel");
-  if (type === "pdf") printPdfSummary(report);
-}
-
-function toCsv(report) {
-  return [report.headers, ...report.rows]
-    .map((row) => row.map((cell) => `"${String(cell).replaceAll('"', '""')}"`).join(","))
-    .join("\n");
-}
-
-function toExcelHtml(report) {
-  return `
-    <html><head><meta charset="UTF-8"></head><body>
-      <h1>${report.title}</h1>
-      <table border="1">
-        <thead><tr>${report.headers.map((header) => `<th>${header}</th>`).join("")}</tr></thead>
-        <tbody>${report.rows.map((row) => `<tr>${row.map((cell) => `<td>${cell}</td>`).join("")}</tr>`).join("")}</tbody>
-      </table>
-    </body></html>
-  `;
-}
-
-function downloadFile(filename, content, type) {
-  const blob = new Blob([content], { type });
-  const url = URL.createObjectURL(blob);
-  const link = document.createElement("a");
-  link.href = url;
-  link.download = filename;
-  document.body.appendChild(link);
-  link.click();
-  link.remove();
-  URL.revokeObjectURL(url);
-}
-
-function printPdfSummary(report) {
-  const printWindow = window.open("", "_blank");
-  if (!printWindow) return;
-  printWindow.document.write(`
-    <html>
-      <head>
-        <title>${report.title}</title>
-        <style>
-          body { font-family: Arial, sans-serif; padding: 28px; color: #17211c; }
-          h1 { text-transform: uppercase; font-size: 24px; }
-          table { width: 100%; border-collapse: collapse; margin-top: 18px; }
-          th, td { border: 1px solid #dbe3dd; padding: 10px; text-align: left; }
-          th { background: #f2f5f2; }
-        </style>
-      </head>
-      <body>
-        <h1>${report.title}</h1>
-        <p>Generated from Gowtham Nataraj's data analyst portfolio dashboard.</p>
-        <table>
-          <thead><tr>${report.headers.map((header) => `<th>${header}</th>`).join("")}</tr></thead>
-          <tbody>${report.rows.map((row) => `<tr>${row.map((cell) => `<td>${cell}</td>`).join("")}</tr>`).join("")}</tbody>
-        </table>
-      </body>
-    </html>
-  `);
-  printWindow.document.close();
-  printWindow.focus();
-  printWindow.print();
+  drawComparisonChart("corporateModelChart", corporateProjectResults.models, "r2", { color: chartColors.primary });
+  drawComparisonChart("corporateCorrelationChart", corporateProjectResults.correlations, "value", { color: chartColors.secondary });
 }
 
 function shortName(value) {
   return value.split(" ").slice(0, 2).join(" ");
 }
 
-function renderPage() {
-  renderKpis();
-  renderCharts();
-  renderTables();
-  renderCaseCards();
-  renderCorporateProjectResults();
+function debounce(fn, delay) {
+  let timer;
+  return function (...args) {
+    clearTimeout(timer);
+    timer = setTimeout(() => fn.apply(this, args), delay);
+  };
 }
 
-window.addEventListener("resize", renderPage);
+function initMotion() {
+  const sections = document.querySelectorAll(".reveal-on-scroll");
+  if (!sections.length) return;
+
+  const reducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
+  if (reducedMotion || !("IntersectionObserver" in window)) {
+    sections.forEach((el) => el.classList.add("is-visible"));
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("is-visible");
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.12 });
+
+  sections.forEach((el) => observer.observe(el));
+}
+
+function initSkillBars() {
+  const bars = document.querySelectorAll(".skill-fill[data-pct]");
+  if (!bars.length) return;
+
+  const reducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
+  if (reducedMotion || !("IntersectionObserver" in window)) {
+    bars.forEach((bar) => { bar.style.width = `${bar.dataset.pct}%`; });
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.style.width = `${entry.target.dataset.pct}%`;
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.25 });
+
+  bars.forEach((bar) => observer.observe(bar));
+}
+
+function renderPage() {
+  const projects = getFilteredProjects();
+  renderKpis(projects);
+  renderCharts(projects);
+  renderTables(projects);
+  renderProjectCards(projects);
+  renderCorporateProjectResults();
+  renderDashboard();
+}
+
+window.addEventListener("resize", debounce(renderPage, 150));
 
 bindControls();
 initMotion();
+initSkillBars();
 renderPage();
+
+

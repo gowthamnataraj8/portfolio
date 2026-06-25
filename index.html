@@ -3,23 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Gowtham Nataraj is a Junior Data Analyst based in London, skilled in SQL, Python, Power BI, Tableau, Excel, KPI reporting, dashboard development, and business intelligence. Open to Data Analyst roles across the UK.">
+  <meta name="description" content="Gowtham Nataraj is a Junior Data Analyst in London. This portfolio presents real analytics projects in corporate profitability modelling and banking SQL risk analysis.">
   <title>Gowtham Nataraj | Data Analyst Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=11">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=37">
 </head>
-<body>
+<body class="home-page">
   <div class="admin-shell">
     <aside class="sidebar">
       <a class="brand" href="index.html"><span class="brand-mark">GN</span><span>Gowtham Nataraj</span></a>
       <nav class="side-nav" aria-label="Portfolio navigation">
-        <a class="active" href="index.html" data-icon="OV">Overview</a>
+        <a class="active" href="index.html" data-icon="OV">Home</a>
+        <a href="products.html" data-icon="CS">Work</a>
         <a href="dashboard.html" data-icon="AN">Analytics</a>
-        <a href="products.html" data-icon="CS">Case Studies</a>
-        <a href="about.html" data-icon="ME">About Me</a>
-        <a href="contact.html" data-icon="CV">Resume</a>
+        <a href="about.html" data-icon="ME">About</a>
+        <a href="contact.html" data-icon="CV">Contact</a>
       </nav>
       <button class="logout-button" type="button" data-logout>Logout</button>
       <div class="sidebar-card">
@@ -29,86 +29,198 @@
     </aside>
 
     <main class="main-content">
-      <header class="topbar portfolio-hero reveal-on-scroll">
+      <header class="topbar portfolio-hero elite-hero reveal-on-scroll">
         <button class="menu-toggle" type="button" aria-label="Toggle sidebar">Menu</button>
-        <div class="hero-copy">
-          <p class="eyebrow">Junior Data Analyst in London</p>
-          <h1>Gowtham Nataraj Data Analyst Portfolio</h1>
-          <p class="page-subtitle">MSc Big Data & Data Science graduate with hands-on experience in SQL, Python, Power BI, Tableau, Excel, dashboard development, EDA, KPI reporting, and business intelligence. Open to Data Analyst opportunities across the UK.</p>
+        <div class="elite-hero-copy">
+          <div class="real-project-banner">
+            <span>Real case-study portfolio</span>
+            <strong>Python + SQL analytics</strong>
+          </div>
+          <p class="eyebrow">Gowtham Nataraj | Junior Data Analyst | London, UK</p>
+          <h1>Business-focused analytics portfolio.</h1>
+          <p class="page-subtitle">I am Gowtham Nataraj, a Junior Data Analyst in London. I use Python, SQL, dashboards, and financial analysis to turn raw data into clear business insight.</p>
           <div class="hero-actions">
-            <a class="hero-button primary" href="contact.html">Contact Me</a>
+            <a class="hero-button primary" href="products.html">View Projects</a>
+            <a class="hero-button" href="dashboard.html">Analytics Dashboard</a>
             <a class="hero-button" href="gowtham-nataraj-resume.pdf" download>Download CV</a>
-            <a class="hero-button" href="products.html">View Projects</a>
-            <a class="hero-button" href="dashboard.html">Live Dashboard</a>
+          </div>
+          <div class="elite-proof-grid" aria-label="Portfolio proof points">
+            <article><span>01</span><strong>Corporate Profitability ML</strong><small>SEC XBRL data, panel regression, Random Forest.</small></article>
+            <article><span>02</span><strong>Banking SQL Risk Analysis</strong><small>Transactions, fraud patterns, loan acceptance.</small></article>
+            <article><span>Stack</span><strong>Python, SQL, PostgreSQL</strong><small>Pandas, NumPy, Statsmodels, Scikit-learn.</small></article>
           </div>
         </div>
-        <aside class="hero-profile-card" aria-label="Candidate profile summary">
-          <img src="gowtham-nataraj-profile.jpeg" alt="Gowtham Nataraj profile photo">
-          <div>
-            <span>Open to work</span>
-            <strong>Data Analyst Roles</strong>
-            <p>London and UK opportunities</p>
+        <aside class="elite-visual" aria-label="Portfolio visual summary">
+          <div class="elite-photo-ring">
+            <img src="gowtham-nataraj-profile.jpeg" alt="Gowtham Nataraj profile photo">
+            <span>Open to analyst roles</span>
+          </div>
+          <div class="elite-command-panel">
+            <div class="command-row command-head">
+              <span>portfolio_case_studies</span>
+              <strong>LIVE</strong>
+            </div>
+            <div class="command-row">
+              <span>Projects completed</span>
+              <strong>2</strong>
+            </div>
+            <div class="command-row">
+              <span>Clean rows modelled</span>
+              <strong>21,087</strong>
+            </div>
+            <div class="command-row">
+              <span>Best model R2</span>
+              <strong>0.319</strong>
+            </div>
+            <div class="elite-chart" aria-hidden="true">
+              <i style="height: 42%"></i>
+              <i style="height: 68%"></i>
+              <i style="height: 54%"></i>
+              <i style="height: 86%"></i>
+              <i style="height: 61%"></i>
+              <i style="height: 74%"></i>
+            </div>
           </div>
         </aside>
       </header>
 
-      <section class="quick-actions" aria-label="Dashboard controls">
-        <div class="filter-group">
-          <span>Project focus</span>
-          <select id="categoryFilter" aria-label="Select project focus">
-            <option value="all">All Case Studies</option>
-            <option value="Python">Python</option>
-            <option value="Power BI">Power BI</option>
-            <option value="SQL">SQL</option>
-            <option value="Excel">Excel</option>
-          </select>
+      <section class="executive-snapshot reveal-on-scroll" aria-label="Executive portfolio snapshot">
+        <div>
+          <p class="eyebrow">Professional snapshot</p>
+          <h2>Finance-focused analyst with practical Python and SQL project evidence.</h2>
         </div>
-        <div class="filter-group export-group">
-          <span>Export sample report</span>
-          <button class="toolbar-button" type="button" data-export="csv">CSV</button>
-          <button class="toolbar-button" type="button" data-export="excel">Excel</button>
-          <button class="toolbar-button" type="button" data-export="pdf">PDF</button>
+        <div class="snapshot-track">
+          <article>
+            <span>Business domain</span>
+            <strong>Financial analysis</strong>
+            <small>Profitability, debt strategy, banking risk, transactions, fraud, and loans.</small>
+          </article>
+          <article>
+            <span>Delivery style</span>
+            <strong>Case-study reports</strong>
+            <small>Each project shows the question, method, evidence, result, and GitHub source.</small>
+          </article>
+          <article>
+            <span>Role target</span>
+            <strong>Junior Data Analyst</strong>
+            <small>Ready for reporting, BI, SQL analysis, and Python analytics roles in the UK.</small>
+          </article>
+        </div>
+      </section>
+
+      <section class="professional-summary reveal-on-scroll" aria-label="Professional analysis process">
+        <article>
+          <span>01</span>
+          <strong>Analyse</strong>
+          <p>Clean raw financial data, prepare modelling tables, and write SQL queries for banking datasets.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <strong>Visualise</strong>
+          <p>Turn Python model results and SQL outputs into clear charts, metrics, and case-study evidence.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <strong>Recommend</strong>
+          <p>Translate findings into concise business actions, risks, and next steps.</p>
+        </article>
+      </section>
+
+      <section class="portfolio-principles reveal-on-scroll" aria-label="Portfolio presentation principles">
+        <div>
+          <p class="eyebrow">Portfolio approach</p>
+          <h2>Each project is shown like a real analyst case study</h2>
+        </div>
+        <div class="principle-grid">
+          <article><strong>Business question</strong><span>What decision or risk does the analysis support?</span></article>
+          <article><strong>Analysis process</strong><span>How the data was cleaned, queried, modelled, or validated.</span></article>
+          <article><strong>Evidence</strong><span>Notebook output, SQL logic, metrics, charts, and GitHub files.</span></article>
+          <article><strong>Insight</strong><span>Clear findings that a recruiter or stakeholder can understand quickly.</span></article>
         </div>
       </section>
 
       <section class="career-grid reveal-on-scroll" aria-label="Career highlights">
         <article>
-          <strong>1+ Years</strong>
+          <strong>2+ years</strong>
           <span>Analytics experience</span>
         </article>
         <article>
-          <strong>5+ Projects</strong>
-          <span>Dashboards and analysis</span>
+          <strong>2 real projects</strong>
+          <span>ML and SQL case studies</span>
         </article>
         <article>
-          <strong>SQL + Python</strong>
-          <span>Core analysis toolkit</span>
+          <strong>21,087 rows</strong>
+          <span>Clean data modelled</span>
         </article>
         <article>
-          <strong>Power BI</strong>
-          <span>Reporting and KPI views</span>
+          <strong>R2 0.319</strong>
+          <span>Best Random Forest score</span>
         </article>
       </section>
 
-      <section class="skill-strip reveal-on-scroll" aria-label="Technical skills">
-        <span>SQL</span>
-        <span>Python</span>
-        <span>Power BI</span>
-        <span>Tableau</span>
-        <span>Excel</span>
-        <span>Pandas</span>
-        <span>NumPy</span>
-        <span>PostgreSQL</span>
-        <span>MySQL</span>
-        <span>EDA</span>
-        <span>KPI Reporting</span>
+      <section class="skills-expertise-section reveal-on-scroll" aria-label="Technical skills proficiency">
+        <div class="skills-section-header">
+          <div>
+            <p class="eyebrow">Technical proficiency</p>
+            <h2>Tools I use on real analytics projects</h2>
+          </div>
+          <span class="skills-verified-badge">Demonstrated in portfolio</span>
+        </div>
+        <div class="skills-bars-grid">
+          <div class="skill-row">
+            <span class="skill-name">Python &amp; Pandas</span>
+            <div class="skill-track"><div class="skill-fill" data-pct="85"></div></div>
+            <span class="skill-pct">85%</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-name">SQL &amp; PostgreSQL</span>
+            <div class="skill-track"><div class="skill-fill" data-pct="85"></div></div>
+            <span class="skill-pct">85%</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-name">Data Cleaning &amp; EDA</span>
+            <div class="skill-track"><div class="skill-fill" data-pct="90"></div></div>
+            <span class="skill-pct">90%</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-name">Power BI</span>
+            <div class="skill-track"><div class="skill-fill alt" data-pct="75"></div></div>
+            <span class="skill-pct">75%</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-name">Scikit-learn &amp; ML</span>
+            <div class="skill-track"><div class="skill-fill" data-pct="72"></div></div>
+            <span class="skill-pct">72%</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-name">Excel &amp; Reporting</span>
+            <div class="skill-track"><div class="skill-fill alt" data-pct="80"></div></div>
+            <span class="skill-pct">80%</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-name">Statsmodels &amp; Regression</span>
+            <div class="skill-track"><div class="skill-fill" data-pct="70"></div></div>
+            <span class="skill-pct">70%</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-name">Dashboard Design</span>
+            <div class="skill-track"><div class="skill-fill alt" data-pct="78"></div></div>
+            <span class="skill-pct">78%</span>
+          </div>
+        </div>
+        <div class="skills-also-row" aria-label="Additional tools">
+          <span class="skills-also-label">Also experienced with:</span>
+          <div class="skills-also-tags">
+            <span>pgAdmin</span><span>NumPy</span><span>SEC XBRL Data</span><span>Panel Regression</span><span>EDA</span><span>Jupyter</span><span>Git</span><span>Google Data Analytics</span>
+          </div>
+        </div>
       </section>
 
       <section class="home-real-project reveal-on-scroll">
         <div class="home-real-project-copy">
           <p class="eyebrow">Featured real project</p>
           <h2>Impact of Cost Structure and Debt Strategy on Corporate Profitability</h2>
-          <p>Live portfolio case study built from your GitHub notebook. It uses SEC Financial Statement datasets, Python, Pandas, fixed effects panel regression, and Random Forest modelling to analyse how cost structure and debt ratio affect ROA.</p>
+          <p>A full machine learning research project using SEC Financial Statement filings from 2016 to 2026. I built financial ratios, created a panel dataset, and compared fixed effects regression with Random Forest to explain how cost structure and debt strategy affect corporate profitability.</p>
           <div class="hero-actions">
             <a class="hero-button primary" href="products.html">View Live Results</a>
             <a class="hero-button" href="https://github.com/gowthamnataraj8/Impact-of-Cost-Structure-and-Debt-Strategy-on-Corporate-Profitability" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
@@ -122,59 +234,137 @@
         </div>
       </section>
 
-      <section class="project-studio reveal-on-scroll" aria-label="Individual project dashboards">
+      <section class="project-studio case-study-showcase reveal-on-scroll" aria-label="Real project case studies">
         <div class="project-studio-header">
-          <p class="eyebrow">Portfolio project studio</p>
-          <h2>Individual Dashboards for Power BI, SQL, Python and Excel</h2>
-          <p>Each project now has its own live dashboard path, tools, case-study story, and space for screenshots or downloadable files.</p>
+          <p class="eyebrow">Selected case studies</p>
+          <h2>Two completed analytics projects</h2>
+          <p>Both projects are organised as recruiter-ready case studies with business context, tools, output, and source evidence.</p>
         </div>
         <div class="studio-grid">
-          <a class="studio-card studio-powerbi" href="dashboard.html#powerbi-dashboard">
-            <span>Power BI</span>
-            <strong>Financial KPI Dashboard</strong>
-            <small>Dashboard pages, KPI cards, DAX-ready metrics, screenshot area</small>
-          </a>
-          <a class="studio-card studio-sql" href="dashboard.html#sql-revenue-dashboard">
-            <span>SQL</span>
-            <strong>Revenue and Profit Analysis</strong>
-            <small>Query output, aggregations, margin logic, business reporting</small>
-          </a>
           <a class="studio-card studio-python" href="dashboard.html#corporate-profitability-dashboard">
             <span>Python</span>
             <strong>Corporate Profitability ML</strong>
-            <small>SEC data, panel regression, Random Forest, notebook results</small>
+            <small>Problem: explain profitability drivers using SEC filing data. Output: regression and Random Forest comparison.</small>
           </a>
-          <a class="studio-card studio-excel" href="dashboard.html#excel-reporting-dashboard">
-            <span>Excel</span>
-            <strong>Monthly Reporting Pack</strong>
-            <small>Pivot-style summary, charts, finance table, export-ready view</small>
+          <a class="studio-card studio-sql" href="products.html#projectCards">
+            <span>SQL</span>
+            <strong>Banking and Financial Risk Analysis</strong>
+            <small>Problem: understand transaction, fraud, and loan patterns. Output: PostgreSQL business insight queries.</small>
           </a>
+        </div>
+      </section>
+
+      <section class="career-timeline reveal-on-scroll" aria-label="Career and education timeline">
+        <div class="career-timeline-header">
+          <p class="eyebrow">Career &amp; education</p>
+          <h2>My journey from study to professional analytics</h2>
+        </div>
+        <div class="timeline-list">
+
+          <div class="timeline-node">
+            <div class="timeline-dot-wrap">
+              <div class="timeline-dot">
+                <svg viewBox="0 0 24 24"><path d="M20 7h-4V5c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2zm-8-2h4v2h-4V5zm-6 4h12v11H6V9z"/></svg>
+              </div>
+            </div>
+            <div class="timeline-body">
+              <span class="timeline-period">Feb 2026 - Present</span>
+              <strong>Data Analyst Intern</strong>
+              <span class="timeline-org">Mango Lassi AI &middot; London, UK</span>
+              <p>Analyse structured datasets, build Power BI dashboards, perform exploratory data analysis, and clean data using Python and SQL to support business decision-making.</p>
+              <div class="timeline-tags">
+                <span class="timeline-tag">Power BI</span>
+                <span class="timeline-tag">Python</span>
+                <span class="timeline-tag">SQL</span>
+                <span class="timeline-tag">EDA</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-node">
+            <div class="timeline-dot-wrap">
+              <div class="timeline-dot edu">
+                <svg viewBox="0 0 24 24"><path d="M12 3L1 9l4 2.18V15c0 3 3 5 7 5s7-2 7-5v-3.82L21 9l-9-6zm0 2.12L19.25 9 12 12.88 4.75 9 12 5.12zM18 14.5c0 1.66-2.69 3.5-6 3.5s-6-1.84-6-3.5v-2.28l6 3.28 6-3.28v2.28z"/></svg>
+              </div>
+            </div>
+            <div class="timeline-body">
+              <span class="timeline-period edu">May 2025 - May 2026</span>
+              <strong>MSc Big Data &amp; Data Science</strong>
+              <span class="timeline-org">Northumbria University &middot; London, UK</span>
+              <p>Postgraduate study in large-scale data analysis, machine learning, statistical modelling, and business intelligence. Applied theory to real financial datasets in portfolio projects.</p>
+              <div class="timeline-tags">
+                <span class="timeline-tag edu">Machine Learning</span>
+                <span class="timeline-tag edu">Big Data</span>
+                <span class="timeline-tag edu">Statistics</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-node">
+            <div class="timeline-dot-wrap">
+              <div class="timeline-dot">
+                <svg viewBox="0 0 24 24"><path d="M20 7h-4V5c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2zm-8-2h4v2h-4V5zm-6 4h12v11H6V9z"/></svg>
+              </div>
+            </div>
+            <div class="timeline-body">
+              <span class="timeline-period">Jun 2024 - Feb 2025</span>
+              <strong>Data Analyst</strong>
+              <span class="timeline-org">Nikosi Exports &middot; India</span>
+              <p>Performed sales and operational data analysis, created Excel dashboards, automated reporting workflows, validated data quality, and generated business insights for stakeholders.</p>
+              <div class="timeline-tags">
+                <span class="timeline-tag">Excel</span>
+                <span class="timeline-tag">Reporting</span>
+                <span class="timeline-tag">Dashboards</span>
+                <span class="timeline-tag">Data Cleaning</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-node">
+            <div class="timeline-dot-wrap">
+              <div class="timeline-dot edu">
+                <svg viewBox="0 0 24 24"><path d="M12 3L1 9l4 2.18V15c0 3 3 5 7 5s7-2 7-5v-3.82L21 9l-9-6zm0 2.12L19.25 9 12 12.88 4.75 9 12 5.12zM18 14.5c0 1.66-2.69 3.5-6 3.5s-6-1.84-6-3.5v-2.28l6 3.28 6-3.28v2.28z"/></svg>
+              </div>
+            </div>
+            <div class="timeline-body">
+              <span class="timeline-period edu">Jun 2021 - Apr 2024</span>
+              <strong>Bachelor of Computer Applications</strong>
+              <span class="timeline-org">Bharathiar University &middot; India</span>
+              <p>Undergraduate degree covering programming, database systems, and computing fundamentals. Built a strong foundation in SQL, software development, and data structures.</p>
+              <div class="timeline-tags">
+                <span class="timeline-tag edu">SQL</span>
+                <span class="timeline-tag edu">Programming</span>
+                <span class="timeline-tag edu">Databases</span>
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
 
       <section class="kpi-grid reveal-on-scroll">
         <article class="kpi-card">
-          <span>Total Revenue</span>
-          <strong id="revenueKpi">$0</strong>
-          <small>Annual sample revenue</small>
+          <span>Total Projects</span>
+          <strong id="projectCountKpi">0</strong>
+          <small>Case studies in portfolio</small>
           <div class="mini-trend trend-up"><i></i><i></i><i></i><i></i><i></i></div>
         </article>
         <article class="kpi-card">
-          <span>Total Cost</span>
-          <strong id="costKpi">$0</strong>
-          <small>Operating cost</small>
-          <div class="mini-trend"><i></i><i></i><i></i><i></i><i></i></div>
-        </article>
-        <article class="kpi-card">
-          <span>Net Profit</span>
-          <strong id="profitKpi">$0</strong>
-          <small id="marginNote">Profit margin</small>
+          <span>Tools Used</span>
+          <strong id="toolsKpi">0</strong>
+          <small>Unique skills applied</small>
           <div class="mini-trend trend-up"><i></i><i></i><i></i><i></i><i></i></div>
         </article>
         <article class="kpi-card">
-          <span>Outstanding Debt</span>
-          <strong id="debtKpi">$0</strong>
-          <small id="debtNote">Debt ratio</small>
+          <span>Avg Impact</span>
+          <strong id="impactKpi">0%</strong>
+          <small>Across filtered projects</small>
+          <div class="mini-trend trend-up"><i></i><i></i><i></i><i></i><i></i></div>
+        </article>
+        <article class="kpi-card">
+          <span>Readiness</span>
+          <strong id="readinessKpi">0%</strong>
+          <small>Projects marked Ready</small>
           <div class="mini-trend"><i></i><i></i><i></i><i></i><i></i></div>
         </article>
       </section>
@@ -183,23 +373,23 @@
         <article class="panel panel-wide interview-panel">
           <div class="panel-header">
             <div>
-              <p class="eyebrow">Interview story</p>
-              <h2>What This Portfolio Shows</h2>
+              <p class="eyebrow">My approach</p>
+              <h2>What I Do as a Data Analyst</h2>
             </div>
-            <span class="panel-note">Live demo ready</span>
+            <span class="panel-note">Recruiter ready</span>
           </div>
           <div class="talking-points">
             <div>
-              <strong>Business problem</strong>
-              <p>Turn raw financial activity into simple KPIs that help managers understand performance, risk, and monthly change.</p>
+              <strong>I frame business problems first</strong>
+              <p>Before writing SQL or Python, I identify the question the analysis needs to answer, the metric that matters, and the decision it supports.</p>
             </div>
             <div>
-              <strong>Analytics toolkit</strong>
-              <p>SQL, Python, Pandas, NumPy, Power BI, Tableau, Excel, PostgreSQL, MySQL, data cleaning, visualisation, and stakeholder reporting.</p>
+              <strong>I deliver end-to-end analysis</strong>
+              <p>From SEC file extraction and ratio engineering to banking transaction queries and written insight, I show the full analytical workflow.</p>
             </div>
             <div>
-              <strong>Recruiter message</strong>
-              <p>I am currently seeking UK data analyst roles where I can support reporting, KPI tracking, dashboarding, and decision making.</p>
+              <strong>I communicate results clearly</strong>
+              <p>I translate findings into plain-language insight that non-technical stakeholders can act on, whether that is a management dashboard, a summary slide, or a recommendation.</p>
             </div>
           </div>
         </article>
@@ -207,25 +397,35 @@
         <article class="panel panel-wide">
           <div class="panel-header">
             <div>
-              <p class="eyebrow">Financial trend</p>
-              <h2>Revenue, Cost and Profit</h2>
+              <p class="eyebrow">Portfolio growth</p>
+              <h2>Projects and Insights Over Time</h2>
             </div>
-            <span class="panel-note">Editable sample data</span>
+            <span class="panel-note">Project workflow stages</span>
           </div>
-          <canvas id="financeTrendChart" height="290"></canvas>
+          <canvas id="portfolioTrendChart" height="290"></canvas>
         </article>
 
         <article class="panel">
           <div class="panel-header">
             <div>
-              <p class="eyebrow">Risk</p>
-              <h2>Debt and Loss Trend</h2>
+              <p class="eyebrow">Skills</p>
+              <h2>Tool Usage Breakdown</h2>
             </div>
           </div>
-          <canvas id="debtChart" height="290"></canvas>
+          <canvas id="skillsChart" height="290"></canvas>
         </article>
 
         <article class="panel">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Impact</p>
+              <h2>Project Impact Scores</h2>
+            </div>
+          </div>
+          <canvas id="impactChart" height="290"></canvas>
+        </article>
+
+        <article class="panel panel-wide">
           <div class="panel-header">
             <div>
               <p class="eyebrow">Case studies</p>
@@ -235,16 +435,37 @@
           <div class="table-wrap">
             <table>
               <thead>
-                <tr><th>Case Study</th><th>Focus</th><th>Tools</th><th>Impact</th></tr>
+                <tr><th>Project</th><th>Focus</th><th>Tools</th><th>Impact</th></tr>
               </thead>
               <tbody id="featuredProjectsTable"></tbody>
             </table>
           </div>
         </article>
+
+        <article class="panel panel-wide">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Real projects</p>
+              <h2>Portfolio Projects</h2>
+            </div>
+          </div>
+          <div id="projectCards" class="project-grid"></div>
+        </article>
+      </section>
+      <section class="hire-cta reveal-on-scroll" aria-label="Hire me call to action">
+        <span class="hire-cta-eyebrow">Available now &middot; London, UK</span>
+        <h2>Looking for a data analyst who delivers real results?</h2>
+        <p>Immediately available for Junior Data Analyst, BI Analyst, SQL Analyst, and Reporting Analyst roles across the UK.</p>
+        <div class="hire-cta-actions">
+          <a class="hire-cta-btn primary" href="mailto:gowthamnatarajj@gmail.com">Send Email</a>
+          <a class="hire-cta-btn outline" href="https://www.linkedin.com/in/gowtham-nataraj-523687280/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
+          <a class="hire-cta-btn outline" href="gowtham-nataraj-resume.pdf" download>Download CV</a>
+          <a class="hire-cta-btn outline" href="contact.html">Contact Page</a>
+        </div>
       </section>
     </main>
   </div>
 
-  <script src="script.js?v=11"></script>
+  <script src="script.js?v=37"></script>
 </body>
 </html>

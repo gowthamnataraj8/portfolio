@@ -22,17 +22,15 @@ I am Gowtham Nataraj, a Junior Data Analyst based in London and currently seekin
 
 ## How To Run Locally
 
-Open `index.html` directly in a browser, or run the included local server:
+No Node, npm, or install step is needed.
 
-```powershell
-node server.js
-```
+Fastest option:
 
-Then open:
+1. Open this project folder.
+2. Double-click `index.html`.
+3. The portfolio opens in your browser.
 
-```text
-http://localhost:8000/index.html
-```
+On Windows, you can also double-click `open-portfolio.bat`.
 
 ## Interview Demo Flow
 
@@ -50,7 +48,7 @@ Demo credentials:
 
 ```text
 Username: admin
-Password: portfolio123
+Password: splitex123
 ```
 
 To require login for a page during a private demo, add `?locked=true` to the page URL.
@@ -62,14 +60,33 @@ To require login for a page during a private demo, add `?locked=true` to the pag
 - `products.html` - financial case studies
 - `about.html` - candidate profile
 - `contact.html` - resume, contact, GitHub, and LinkedIn links
+- `open-portfolio.bat` - Windows shortcut to open the portfolio quickly
 - `gowtham-nataraj-resume.pdf` - downloadable CV
 - `Google_certificate.png` - Google Data Analytics certificate image
 - `script.js` - dashboard data, charts, filters, exports, and login logic
-- `server.js` - local static server for live dashboard demos
 - `style.css` - responsive visual design
 - `data/splitex-analytics.json` - sample analytics data
+- `projects/` - folder-wise project files and documentation
 - `REAL_PROJECT_TEMPLATE.md` - structure for adding real portfolio projects
 - `assets/` - screenshots, PBIX files, SQL files, Excel reports, and notebook chart exports
+
+## Project Folders
+
+```text
+projects/
+  corporate-profitability/
+    notebooks/
+    data/
+    screenshots/
+    reports/
+  banking-sql-analysis/
+    sql/
+    data/
+    screenshots/
+    reports/
+```
+
+Use each project folder to keep screenshots, source files, reports, and dataset notes separate.
 
 ## Deploy As A Live Dashboard
 

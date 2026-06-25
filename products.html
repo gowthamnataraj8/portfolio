@@ -6,8 +6,8 @@
   <title>Gowtham Nataraj | Projects</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=11">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=37">
 </head>
 <body>
   <div class="admin-shell">
@@ -28,19 +28,17 @@
       <header class="topbar reveal-on-scroll">
         <button class="menu-toggle" type="button" aria-label="Toggle sidebar">Menu</button>
         <div>
-          <p class="eyebrow">Project portfolio</p>
-          <h1>Data Projects for UK Analyst Interviews</h1>
-          <p class="page-subtitle">Real case studies showing business problem framing, SEC financial data processing, Python analysis, econometric modelling, machine learning, dashboard output, insight, and recommendation.</p>
+          <p class="eyebrow">Real Case Studies</p>
+          <h1>Completed Analytics Projects</h1>
+          <p class="page-subtitle">Two completed projects presented as analyst case studies: business question, data work, tools, evidence, and outcome.</p>
         </div>
         <div class="toolbar">
           <div class="filter-group">
             <span>Focus</span>
             <select id="categoryFilter" aria-label="Select project focus">
-              <option value="all">All Case Studies</option>
-              <option value="Python">Python</option>
-              <option value="Power BI">Power BI</option>
+              <option value="all">Real Projects</option>
+              <option value="Machine Learning">Machine Learning</option>
               <option value="SQL">SQL</option>
-              <option value="Excel">Excel</option>
             </select>
           </div>
           <div class="filter-group export-group">
@@ -57,7 +55,7 @@
           <div>
             <p class="eyebrow">Featured real project</p>
             <h2>Impact of Cost Structure and Debt Strategy on Corporate Profitability</h2>
-            <p class="muted">A corporate profitability analysis using SEC Financial Statement datasets from 2016-2026. The project builds financial ratios, creates a panel dataset, compares fixed effects panel regression with Random Forest regression, and explains how cost structure and debt strategy relate to ROA.</p>
+            <p class="muted">Corporate profitability study using 10 years of SEC XBRL financial filings. I extracted and cleaned 21,087 firm-year observations across 2,843 companies, engineered financial ratios (ROA, debt ratio, cost structure), and compared a fixed effects panel regression model against a Random Forest regressor to identify the strongest drivers of profitability.</p>
           </div>
           <a class="hero-button primary" href="https://github.com/gowthamnataraj8/Impact-of-Cost-Structure-and-Debt-Strategy-on-Corporate-Profitability" target="_blank" rel="noopener noreferrer">View GitHub Project</a>
         </article>
@@ -102,43 +100,34 @@
           <div class="panel-header">
             <div>
               <p class="eyebrow">Recruiter view</p>
-              <h2>How I Structure Each Project</h2>
+              <h2>How I Structure My Projects</h2>
             </div>
           </div>
           <div class="talking-points">
             <div>
-              <strong>Problem</strong>
-              <p>Start with the business question, such as revenue performance, risk, cost control, or reporting accuracy.</p>
+              <strong>Define the question</strong>
+              <p>Each project starts with a business question, such as profitability drivers, fraud patterns, transaction value, or loan acceptance behavior.</p>
             </div>
             <div>
-              <strong>Process</strong>
-              <p>Clean data, calculate KPIs, create charts, validate findings, and turn analysis into a dashboard or report.</p>
+              <strong>Clean, calculate, and model</strong>
+              <p>Raw financial data is cleaned, features or query outputs are prepared, and the right tool is used for the analytical goal.</p>
             </div>
             <div>
-              <strong>Impact</strong>
-              <p>Explain the insight, recommendation, and how stakeholders could use the output for decisions.</p>
+              <strong>Deliver actionable insight</strong>
+              <p>The final output explains what the data suggests, why it matters, and how a business team could use the insight.</p>
             </div>
           </div>
         </article>
         <article class="panel panel-wide">
-          <div class="panel-header"><div><p class="eyebrow">Case study impact</p><h2>Impact Score by Finance Project</h2></div></div>
-          <canvas id="caseImpactChart" height="280"></canvas>
+          <div class="panel-header"><div><p class="eyebrow">Impact score</p><h2>Real Project Impact</h2></div></div>
+          <canvas id="impactChart" height="280"></canvas>
         </article>
-      </section>
-
-      <section class="panel project-add-panel reveal-on-scroll">
-        <div>
-          <p class="eyebrow">Add real projects</p>
-          <h2>Ready for Your Strongest Portfolio Work</h2>
-          <p class="muted">Replace the sample case studies with real projects by editing the `cases` list in `script.js`. For each project, add the business problem, dataset, tools, your role, outcome, GitHub link, and live dashboard link.</p>
-        </div>
-        <a class="hero-button primary" href="https://github.com/gowthamnataraj8" target="_blank" rel="noopener noreferrer">GitHub Profile</a>
       </section>
 
       <section class="project-grid reveal-on-scroll" id="projectCards"></section>
     </main>
   </div>
 
-  <script src="script.js?v=11"></script>
+  <script src="script.js?v=37"></script>
 </body>
 </html>

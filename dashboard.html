@@ -6,8 +6,8 @@
   <title>Gowtham Nataraj | Analytics Dashboard</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=11">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=37">
 </head>
 <body>
   <div class="admin-shell">
@@ -28,9 +28,9 @@
       <header class="topbar reveal-on-scroll">
         <button class="menu-toggle" type="button" aria-label="Toggle sidebar">Menu</button>
         <div>
-          <p class="eyebrow">Live project dashboard</p>
-          <h1>Corporate Profitability Analysis</h1>
-          <p class="page-subtitle">Interactive dashboard for the GitHub project analysing how cost structure and debt strategy affect corporate profitability using SEC Financial Statement datasets, fixed effects panel regression, and Random Forest modelling.</p>
+          <p class="eyebrow">Analytics Dashboard</p>
+          <h1>Corporate Profitability Dashboard</h1>
+          <p class="page-subtitle">Interactive views for my completed project analysing how cost structure and debt strategy affect corporate profitability using SEC financial statement data, panel regression, and Random Forest modelling.</p>
           <div class="hero-actions">
             <a class="hero-button primary" href="https://github.com/gowthamnataraj8/Impact-of-Cost-Structure-and-Debt-Strategy-on-Corporate-Profitability" target="_blank" rel="noopener noreferrer">GitHub Project</a>
             <a class="hero-button" href="https://github.com/gowthamnataraj8/Impact-of-Cost-Structure-and-Debt-Strategy-on-Corporate-Profitability/blob/main/main.ipynb" target="_blank" rel="noopener noreferrer">Open Notebook</a>
@@ -40,10 +40,6 @@
 
       <section class="dashboard-switcher reveal-on-scroll" aria-label="Project dashboard shortcuts">
         <a href="#corporate-profitability-dashboard">Corporate Profitability</a>
-        <a href="#powerbi-dashboard">Power BI</a>
-        <a href="#sql-revenue-dashboard">SQL Revenue</a>
-        <a href="#python-cost-dashboard">Python Cost Study</a>
-        <a href="#excel-reporting-dashboard">Excel Reporting</a>
       </section>
 
       <section class="dashboard-hero-metrics reveal-on-scroll" id="corporate-profitability-dashboard" aria-label="Corporate profitability project metrics">
@@ -128,118 +124,10 @@
           </div>
         </article>
       </section>
-
-      <section class="dashboard-grid project-dashboard-section" id="powerbi-dashboard">
-        <article class="panel dashboard-card-wide powerbi-preview-panel">
-          <div class="panel-header">
-            <div>
-              <p class="eyebrow">Live project dashboard</p>
-              <h2>Power BI Financial KPI Dashboard</h2>
-            </div>
-            <span class="panel-note">Screenshot ready</span>
-          </div>
-          <div class="powerbi-preview">
-            <div class="preview-top">
-              <strong>Financial Performance</strong>
-              <span>Power BI dashboard mock preview</span>
-            </div>
-            <div class="preview-kpis">
-              <div><span>Revenue</span><strong>$1.49M</strong></div>
-              <div><span>Profit</span><strong>$519K</strong></div>
-              <div><span>Margin</span><strong>34.8%</strong></div>
-              <div><span>Debt</span><strong>$65K</strong></div>
-            </div>
-            <canvas id="financeTrendChart" height="260"></canvas>
-          </div>
-        </article>
-        <article class="panel">
-          <p class="eyebrow">How to add your real Power BI</p>
-          <h2>Screenshot and PBIX Ready</h2>
-          <p class="muted">Export Power BI screenshots as PNG and place them in `assets/`. Add a `.pbix` download link or a published Power BI Service link when available.</p>
-          <div class="finding-list">
-            <div><strong>Recommended pages</strong><span>Executive Summary, Trend Analysis, Category View, Risk View</span></div>
-            <div><strong>Buttons to add</strong><span>Open Report, GitHub, Download PBIX, View Screenshot</span></div>
-          </div>
-        </article>
-      </section>
-
-      <section class="dashboard-grid project-dashboard-section" id="sql-revenue-dashboard">
-        <article class="panel dashboard-card-wide">
-          <div class="panel-header">
-            <div>
-              <p class="eyebrow">Live project dashboard</p>
-              <h2>SQL Revenue and Profit Analysis</h2>
-            </div>
-            <span class="panel-note">Revenue focus</span>
-          </div>
-          <div class="sql-result-table">
-            <table>
-              <thead><tr><th>Query output</th><th>Metric</th><th>Result</th></tr></thead>
-              <tbody>
-                <tr><td>SUM(revenue)</td><td>Total revenue</td><td>$1.49M</td></tr>
-                <tr><td>SUM(profit)</td><td>Total profit</td><td>$519K</td></tr>
-                <tr><td>profit / revenue</td><td>Annual margin</td><td>34.8%</td></tr>
-                <tr><td>ORDER BY profit DESC</td><td>Best month</td><td>December</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </article>
-        <article class="panel">
-          <p class="eyebrow">Business question</p>
-          <h2>Which months drive stronger profitability?</h2>
-          <p class="muted">This dashboard view supports a SQL-style revenue analysis by comparing monthly revenue, cost, and profit movement. It is useful for explaining aggregation, margin logic, variance review, and stakeholder reporting.</p>
-        </article>
-      </section>
-
-      <section class="dashboard-grid project-dashboard-section" id="python-cost-dashboard">
-        <article class="panel dashboard-card-wide">
-          <div class="panel-header">
-            <div>
-              <p class="eyebrow">Live project dashboard</p>
-              <h2>Python Data Cleaning and Cost Study</h2>
-            </div>
-            <span class="panel-note">Cost focus</span>
-          </div>
-          <canvas id="lossChart" height="300"></canvas>
-        </article>
-        <article class="panel">
-          <p class="eyebrow">Cleaning output</p>
-          <h2>Cost and Loss Control Signals</h2>
-          <p class="muted">This project view demonstrates how cleaned financial data can be used to flag unusual loss movement and support cost-control decisions after preparing analysis-ready tables in Python/Pandas.</p>
-        </article>
-      </section>
-
-      <section class="dashboard-grid project-dashboard-section" id="excel-reporting-dashboard">
-        <article class="panel dashboard-card-wide">
-          <div class="panel-header">
-            <div>
-              <p class="eyebrow">Live project dashboard</p>
-              <h2>Excel Monthly Reporting Pack</h2>
-            </div>
-            <span class="panel-note">Report pack</span>
-          </div>
-          <canvas id="debtChart" height="300"></canvas>
-        </article>
-        <article class="panel dashboard-card-wide">
-          <div class="panel-header">
-            <div>
-              <p class="eyebrow">KPI table</p>
-              <h2>Monthly Finance Detail</h2>
-            </div>
-          </div>
-          <div class="table-wrap">
-            <table>
-              <thead>
-                <tr><th>Month</th><th>Revenue</th><th>Cost</th><th>Profit</th><th>Loss</th><th>Debt</th><th>Margin</th></tr>
-              </thead>
-              <tbody id="financialDetailTable"></tbody>
-            </table>
-          </div>
-        </article>
-      </section>
     </main>
   </div>
 
-  <script src="script.js?v=11"></script>
+  <script src="script.js?v=37"></script>
 </body>
 </html>
+
